@@ -42,11 +42,14 @@ def myDM(dataset, C, d):
     S = S[sorted_index]
     U = U[:, sorted_index]
     Vt = Vt[sorted_index, :]
-    fiedlerVector = U[:, -2]
     U = U[:, 0:d+1]
     S = S[0:d+1]
     Vt = Vt[0:d+1, :]
     dm_values = np.zeros((NUMBER_OF_ROWS, d))
     for j in range(1, d+1):
         dm_values[:, j-1] = S[j]*U[:, j]
+
+    eigenvalues, eigenvectors = np.linalg.eigh(P)
+    print(eigenvalues[1])
+    fiedlerVector = eigenvectors[1]
     return dm_values, fiedlerVector
