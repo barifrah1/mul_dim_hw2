@@ -35,6 +35,12 @@ if __name__ == "__main__":
 
     # q3
     dataset = DmDataset(path=DataPathQ3)
+    plt.scatter(dataset.data[:, 0], dataset.data[:, 1])
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.title("data plotting")
+    plt.show()
+
     dm = DiffusionMaps(dataset.data, C, NUMBER_OF_DIMENSIONS_Q3)
     dmValues, fiedlerVector = myDM(dm.dataset, dm.C, dm.d)
     print(dmValues)
