@@ -43,7 +43,6 @@ if __name__ == "__main__":
 
     dm = DiffusionMaps(dataset.data, C, NUMBER_OF_DIMENSIONS_Q3)
     dmValues, fiedlerVector = myDM(dm.dataset, dm.C, dm.d)
-    print(dmValues)
 
     # plot 3 dm
     fig = plt.figure(figsize=(10, 8))

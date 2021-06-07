@@ -37,13 +37,14 @@ def myDM(dataset, C, d):
     P = W
     for i, row in enumerate(P):
         P[i] = P[i]*InvertedD[i]
-    U, S, Vt = svds(P, k=d)
+    U, S, Vt = svds(P, k=d+1)
     sorted_index = np.argsort(S)[::-1]
     S = S[sorted_index]
     U = U[:, sorted_index]
     Vt = Vt[sorted_index, :]
     dm_values = np.zeros((NUMBER_OF_ROWS, d))
-    for j in range(1, d):
+    for j in range(1, d+1):
         dm_values[:, j-1] = S[j]*U[:, j]
-    fiedlerVector = S[-2]*U[:, -2]
+    #fiedlerVector = S[-2]*U[:, -2]
+    fiedlerVector = dm_values[:, 0]
     return dm_values, fiedlerVector
