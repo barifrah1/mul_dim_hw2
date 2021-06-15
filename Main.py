@@ -12,7 +12,7 @@ from Consts import *
 
 if __name__ == "__main__":
     args = Args()
-    """dataset = Dataset(args.data)
+    dataset = Dataset(args.data)
     lsi = LatentSemanticIndexing(dataset.df, 2)
     composedForm = lsi.composedForm
     print(composedForm)
@@ -31,8 +31,8 @@ if __name__ == "__main__":
 
     word_doc_query(word1, word2, word_component_df, docsVectorsComposed,
                    termsVectorsComposed, dataset.docs, dataset.terms)
-"""
 
+"""
     # q3
     dataset = DmDataset(path=DataPathQ3)
     plt.scatter(dataset.data[:, 0], dataset.data[:, 1])
@@ -76,3 +76,4 @@ if __name__ == "__main__":
     plt.legend()
     plt.title("Clustering by fiedler")
     plt.show()
+"""
